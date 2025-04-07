@@ -1,11 +1,10 @@
 public class Main {
     public static void main(String[] args){
-        FileCreator create = new FileCreator();
+        BudgetApp budgetApp = new BudgetApp(); // Creates a new BudgetApp object
+        budgetApp.loadUserListFromFile(); // Calls the method to load the user list from a file
+        budgetApp.login(); // Calls the method to login an existing user
 
-        create.createFile();
-        create.createFile();
-        create.createFile();
-        create.createFile();
+        budgetApp.saveUserListToFile(); // Calls the method to save the user list to a file
 
     }
     

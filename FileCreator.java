@@ -114,4 +114,34 @@ public class FileCreator {
         
     }
 
+    public String createUserDataFile() {
+        /**
+         * Creates a new file with file name "budgetApp.txt"
+         * This file will be passed to its corresponding budget object
+         * Stores all the usernames and passwords of the users
+         * This file will be used to check if a user already exists
+         */
+
+        try {
+            // Create a new file named "budgetApp.txt"
+            File newUserFile = new File( "budgetApp.txt");
+
+            // Check if the file already exists
+            if (newUserFile.createNewFile()) {
+                System.out.println("File created: " + newUserFile.getName());
+                return newUserFile.getName(); // Return the name of the created file
+            
+            } else { // If the file already exists, print a message
+                System.out.println("File already exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
+        return null; // Return null if the file creation failed
+
+    }
+
+
 }
